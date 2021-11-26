@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body class="mb-5">
+    <div class="container p-5 shadow p-3 mb-5 mt-3 rounded bg-light">
+        <div class="row">
+            <div class="col-12">
+                <a asp-controller="Transacao" asp-action="Index" class="btn btn-primary btn-xl rounded float-right">Nova transação</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12" id="transacoes-usuario">
+                <partial name="..\Transacao\_TransacoesUsuario" />
+            </div>
+        </div>
+        <div class="row">
+        </div>
+    </div>
+    <script src="~/js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+</body>

@@ -1,0 +1,417 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>PayX - Home</title>
+    <link rel='shortcut icon' type='image/x-icon' href='../assets/img/favicon.ico' />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet"
+          type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <!-- jQuery -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+</head>
+
+<body id="page-top">
+    <div hidden id="viewdata">
+        @ViewData["Envio"]
+        @ViewBag.Message
+        @{
+            if (TempData["Atualizacao"] != null)
+                TempData["Atualizacao"].ToString();
+        }
+    </div>
+    <!-- Navegação -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                <img src="assets/img/navbar-logo.png"
+                     alt="Logotipo payx" />
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                    data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ml-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Simulação</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Como funciona?</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Equipe</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contato</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" asp-controller="Usuario" asp-action="Registro">Registrar-se</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" asp-controller="Usuario" asp-action="Login">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Cabeçalho -->
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead-heading">Nós somos a payX</div>
+            <div class="masthead-subheading">
+                Pague boletos ou faça transferências com seu cartão de crédito parcelado em
+                até 12x
+            </div>
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" asp-controller="Usuario" asp-action="Registro">Crie uma conta</a>
+        </div>
+    </header>
+    <!-- Serviços -->
+    <section class="page-section" id="services">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Serviços</h2>
+                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-file-invoice-dollar fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3">Boletos</h4>
+                    <p class="text-muted">
+                        Pague seus boletos usando o cartão de crédito. Você pode parcelar em até 12x o
+                        pagamento de várias contas (faturas, multas, IPTU, IPVA, contas telefônicas, etc).
+                        Veja as regras para o pagamento de boletos <a class="portfolio-link" data-toggle="modal"
+                                                                      href="#boleto-modal">clicando aqui</a>.<br>
+                        Prazo para pagamento: 2 dias úteis após a aprovação.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-hand-holding-usd fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3">Transferências</h4>
+                    <p class="text-muted">
+                        Você pode transferir até R$x,xx para qualquer titularidade e pagar a
+                        transferência em até 12x usando seu cartão de crédito. Após enviar seu pedido, seus dados serão
+                        analisados, e assim que aprovado a transferência será agendada.
+                        Veja as regras para transferências <a class="portfolio-link" data-toggle="modal"
+                                                              href="#transferencia-modal">clicando aqui</a>.<br>
+                        Prazo para pagamento: 2 dias úteis após a aprovação.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3">Segurança</h4>
+                    <p class="text-muted">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam
+                        architecto quo inventore harum ex magni, dicta impedit.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Simulação -->
+    <section class="page-section bg-light" id="portfolio">
+        <partial name="..\Simulacao\_Simulacao" />
+    </section>
+    <!-- Como funciona? -->
+    <section class="page-section" id="about">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Como funciona?</h2>
+                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            </div>
+            <ul class="timeline">
+                <li>
+                    <div class="timeline-image">
+                        <img class="rounded-circle img-fluid" src="assets/img/about/3.jpg"
+                             alt="" />
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4>Qual serviço procuro?</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="text-muted">
+                                Oferecemos uma forma mais conveniente e fácil na hora de se entender
+                                com as suas contas: o pagamento parcelado dos seus boletos através do limite do seu
+                                cartão de crédito!
+                                E não para por aí: transfira dinheiro com seu cartão de crédito e também parcele em até
+                                12x
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image">
+                        <img class="rounded-circle img-fluid" src="assets/img/about/2.jpg"
+                             alt="" />
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4>O que eu preciso?</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="text-muted">
+                                Você só precisa ter limite disponível no seu cartão, além dos
+                                documentos necessários para aprovação que serão solicitados durante o pedido.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-image">
+                        <img class="rounded-circle img-fluid" src="assets/img/about/1.jpg"
+                             alt="" />
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4>Pra quem é indicado?</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="text-muted">
+                                Pessoas que possuem limite disponível no cartão de crédito e desejam
+                                pagar boletos ou transferir em até 12x.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image">
+                        <img class="rounded-circle img-fluid" src="assets/img/about/4.jpg"
+                             alt="" />
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4>Crie sua conta</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="text-muted">
+                                Deixe a payX contribuir de forma rápida e segura para que você possa
+                                se organizar de maneira eficaz.
+                                Nossa missão é ajudá-lo em momentos difíceis!
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image">
+                        <h4>
+                            Deixe-nos
+                            <br />
+                            fazer parte da
+                            <br />
+                            sua história!
+                        </h4>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- Equipe -->
+    <section class="page-section bg-light" id="team">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Nossa equipe</h2>
+                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" src="assets/img/team/raphael-profile.jpg"
+                             alt="Cofundador e diretor comercial Raphael Lorenzo Bernini" />
+                        <h4>Raphael Lorenzo Bernini</h4>
+                        <p class="text-muted">Diretor comercial</p>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" src="assets/img/team/vinicius-profile.jpg"
+                             alt="Cofundador e diretor técnico Vinícius Godoy Ferreira" />
+                        <h4>Vinícius Godoy Ferreira</h4>
+                        <p class="text-muted">Diretor técnico</p>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <p class="large text-muted">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque,
+                        laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Clientes-->
+    <div class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 my-3">
+                    <a href="#!"><img class="img-fluid d-block mx-auto" src="assets/img/logos/envato.jpg" alt="" /></a>
+                </div>
+                <div class="col-md-3 col-sm-6 my-3">
+                    <a href="#!">
+                        <img class="img-fluid d-block mx-auto" src="assets/img/logos/designmodo.jpg"
+                             alt="" />
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6 my-3">
+                    <a href="#!">
+                        <img class="img-fluid d-block mx-auto" src="assets/img/logos/themeforest.jpg"
+                             alt="" />
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6 my-3">
+                    <a href="#!">
+                        <img class="img-fluid d-block mx-auto" src="assets/img/logos/creative-market.jpg"
+                             alt="" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contato-->
+    <section class="page-section" id="contact">
+        <partial name="_Contato" />
+    </section>
+    <!-- Rodapé -->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-lg-left">Todos os direitos reservados © payX 2021</div>
+                <div class="col-lg-4 my-3 my-lg-0">
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="col-lg-4 text-lg-right">
+                    <a class="mr-3" href="#!">Política de privacidade</a>
+                    <a href="#!">Termos de uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Modal Boleto-->
+    <div id="boleto-modal" class="modal fade">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-uppercase" style="text-align: center;">Boleto</h2>
+                        </div>
+                        <div class="col-12">
+                            <p class="item-intro text-muted" style="text-align: center;">
+                                Precisa pagar um boleto e não
+                                tem saldo na conta? Que
+                                tal usar seu cartão de crédito e parcelar seu boleto em até 12x?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body justify-content-center">
+                    <p>Envie um boleto com registro;</p>
+                    <p>
+                        Verifique a data de vencimento. Só aceitamos boletos com até 2 dias úteis
+                        antes do vencimento;
+                    </p>
+                    <p>Digite na simulação exatamente o valor do boleto, incluindo os centavos;</p>
+                    <p>O valor simulado precisa ser exatamente o mesmo do boleto;</p>
+                    <p>Envie o boleto na solicitação. Foto clara ou pdf</p>
+                    <p>Não serão aceitos boletos sem data de vencimento ou sem valor;</p>
+                    <p>
+                        Boletos com inconsistências de dados ou valores serão recusados pela
+                        instituição de pagamento.
+                    </p>
+                    <div class="row justify-content-center">
+                        <div class="col-3">
+                            <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                <i class="fas fa-times mr-1"></i>
+                                Fechar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Transferências -->
+    <div id="transferencia-modal" class="modal fade">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-uppercase" style="text-align: center;">Transferências</h2>
+                        </div>
+                        <div class="col-12">
+                            <p class="item-intro text-muted" style="text-align: center;">
+                                Precisa transferir dinheiro
+                                urgente e não tem saldo na
+                                conta? Que tal usar seu cartão de crédito e parcelar sua transferência em até 12x?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body justify-content-center">
+                    <p>
+                        Isso mesmo! Na payX você consegue transferir até
+                        R$x,xx e parcelar o
+                        pagamento em até 12x no cartão de crédito. Você só precisa ter um cartão de crédito
+                        com limite disponível. Além dos dados de cartão de crédito, também será solicitado
+                        os dados bancários do beneficiário da transferência.
+                    </p>
+                    <p>
+                        O prazo para transferência é de até 2 dias úteis após a
+                        aprovação do seu pedido.
+                    </p>
+                    <p>
+                        Dados inconsistentes serão recusados pela
+                        instituição de pagamento.
+                    </p>
+                    <p> Se tiver dúvidas, fale conosco </p>
+                    <div class="row justify-content-center">
+                        <div class="col-3">
+                            <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                <i class="fas fa-times mr-1"></i>
+                                Fechar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- Funções próprias -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="js/InicializarMascaras.js"></script>
+    <script src="js/Validacoes.js"></script>
+    <script src="js/funcoesHome.js"></script>
+</body>
+
+</html>

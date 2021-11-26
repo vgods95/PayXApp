@@ -1,0 +1,10 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using PayxApp.Models
+@inject SignInManager<Usuario> SignInManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <form asp-action="Logout" asp-controller="Usuario" id="FormularioLogout">
+        <a class="nav-link js-scroll-trigger" style="cursor:pointer;" onclick="document.getElementById('FormularioLogout').submit();">Logout</a>
+    </form>
+}

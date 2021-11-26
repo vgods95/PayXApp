@@ -1,0 +1,47 @@
+﻿@using PayxApp.ViewModels
+@model ContatoViewModel
+
+<div class="container">
+    <div class="text-center">
+        <h2 class="section-heading text-uppercase">Contato</h2>
+        <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+    </div>
+    <form id="contactForm" name="contato" novalidate="novalidate" asp-action="Contato">
+        <div class="row">
+            <div class="col-12">
+                <div class="text-danger text-start" asp-validation-summary="ModelOnly"></div>
+            </div>
+        </div>
+        <div class="row align-items-stretch mb-5">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input asp-for="NomeContato" class="form-control" id="nome-contato" type="text" placeholder="Seu nome completo*"
+                           required data-validation-required-message="Por favor, identifique-se." />
+                    <span asp-validation-for="NomeContato" class="help-block text-danger text-start" id="validacao-nome-contato"></span>
+                </div>
+                <div class="form-group">
+                    <input asp-for="EmailContato" class="form-control" id="email-contato" type="email" placeholder="Seu e-mail *"
+                           required data-validation-required-message="Por favor, informe seu e-mail." />
+                    <span asp-validation-for="EmailContato" class="help-block text-danger text-start" id="validacao-email-contato"></span>
+                </div>
+                <div class="form-group mb-md-0">
+                    <input asp-for="CelularContato" class="form-control" id="celular-contato" type="tel" placeholder="Seu celular *"
+                           required data-validation-required-message="Por favor, informe o telefone." />
+                    <span asp-validation-for="CelularContato" class="help-block text-danger text-start" id="validacao-celular-contato"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group form-group-textarea mb-md-0">
+                    <textarea asp-for="MensagemContato" class="form-control" id="mensagem-contato" placeholder="Sua mensagem *" required
+                              data-validation-required-message="Por favor, informe uma mensagem"></textarea>
+                    <span asp-validation-for="MensagemContato" class="help-block text-danger text-start" id="validacao-mensagem-contato"></span>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <div id="success"></div>
+            <button hidden class="btn btn-primary btn-xl text-uppercase" id="btn-submit-contato" type="submit">Enviar</button>
+            <a class="btn btn-primary btn-xl text-uppercase" id="btn-contato">Enviar</a>
+        </div>
+    </form>
+</div>

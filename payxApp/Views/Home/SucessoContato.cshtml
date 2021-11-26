@@ -1,0 +1,78 @@
+﻿@model string
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+
+<html>
+<body class="mb-5">
+    @if (Model.Equals("E-mail enviado com sucesso"))
+    {
+        <div class="container p-5 shadow p-3 mb-5 mt-3 rounded sucesso-contato-div">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x sucesso-contato-circulo"></i>
+                        <i class="fas fa-thumbs-up fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="my-5 mx-auto text-black-50">@Model</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h5 class="my-5 text-black-50">
+                        Obrigado pelo contato. Nossos profissionais analisarão sua mensagem e farão o possível para atendê-lo.
+                        Para prosseguir faça login, ou crie sua conta.
+                    </h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <button type="submit" class="btn btn-primary btn-xl text-uppercase" id="btn-login">Fazer login</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <a asp-controller="Usuario" asp-action="Registro">Não possuo uma conta</a>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="container p-5 shadow p-3 mb-5 mt-3 rounded falha-contato-div">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x falha-contato-circulo"></i>
+                        <i class="fas fa-thumbs-down fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="my-5 mx-auto text-black-50">@Model</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h5 class="my-5 text-black-50">
+                        Infelizmente não conseguimos enviar o seu e-mail para a central. Tente novamente
+                        ou entre em contato por um canal alternativo.
+                    </h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <a asp-controller="Home" asp-action="Index">Voltar</a>
+                </div>
+            </div>
+        </div>
+    }
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+﻿@model Usuario
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conta em aprovação - PayxApp</title>
+    <link rel='shortcut icon' type='image/x-icon' href='../assets/img/favicon.ico' />
+    <!-- jQuery -->
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <!--<link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet"
+          type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />-->
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../css/styles.css" rel="stylesheet" />
+</head>
+<body class="w-100 h-100">
+    <div class="container p-5 shadow p-3 mb-5 mt-3 rounded container-analise">
+        <div class="row">
+            <img class="mx-auto" src="~/assets/img/logo-pequeno.png" style="width: 15%;" />
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="section-heading text-uppercase my-5 mx-auto text-muted-analise">Conta em aprovação</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <h5 class="my-5 text-muted-analise">
+                    Olá, @Model.NomeCompleto! Para prosseguir acesse o e-mail @Model.Email e faça a confirmação!
+                </h5>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="../js/scripts.js"></script>
+</body>
+</html>
